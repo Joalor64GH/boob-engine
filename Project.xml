@@ -29,7 +29,9 @@
 
 	<!-- _____________________________ Path Settings ____________________________ -->
 
-	<set name="BUILD_DIR" value="export" />
+	<set name="BUILD_DIR" value="export/debug" if="debug" />
+	<set name="BUILD_DIR" value="export/release" unless="debug" />
+
 	<source path="source" />
 	<assets path="assets" />
 	<assets path="alsoft.ini" />
@@ -41,6 +43,7 @@
 	<haxelib name="flixel-addons" />
 	<haxelib name="flxanimate" />
 	<haxelib name="hscript-improved" />
+	<haxelib name="hxcpp-debug-server" if="desktop debug" />
 
 	<!--In case you want to use nape with flixel-->
 	<!--<haxelib name="nape-haxe4" />-->
